@@ -49,16 +49,16 @@ function BookmarkForm() {
           <input onChange={handleChange} type="text" name="name" value={name} />
         </div>
         <div className="input-group">
-          <label>Name</label>
+          <label>Url</label>
           <input
             onChange={handleChange}
-            type="text"
+            type="url"
             name="website"
             value={website}
           />
         </div>
         <div className="input-group">
-          <label>Name</label>
+          <label>Desc</label>
           <input onChange={handleChange} type="text" name="desc" value={desc} />
         </div>
 

@@ -6,7 +6,7 @@ function BookmarkList() {
   const { bookmark } = useContext(BookmarkContext)
 
   return (
-    <div>
+    <div className="grid">
       {bookmark.map((data) => (
         <BookmarkItem key={data.id} data={data} />
       ))}
