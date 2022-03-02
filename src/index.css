@@ -114,6 +114,12 @@ input:focus {
   opacity: 0.9;
 }
 
+.message {
+  padding-top: 10px;
+  text-align: center;
+  color: red;
+}
+
 .btn:disabled {
   background-color: #cccccc;
   color: #333;

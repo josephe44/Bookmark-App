@@ -9,6 +9,7 @@ function BookmarkForm() {
     website: '',
     desc: '',
   })
+  const [message, setMessage] = useState('')
 
   const { addBookmark } = useContext(BookmarkContext)
 
@@ -28,9 +29,13 @@ function BookmarkForm() {
       website,
       desc,
     }
+
     if (data.name === '' && data.website === '' && data.desc === '') {
-      console.log('fill the form')
+      setMessage('Please fill the form')
+    } else if (name.length <= 8 && desc.length <= 15) {
+      setMessage(`${name} must be 10 character & ${desc} 20 character`)
     } else {
+      setMessage(null)
       addBookmark(data)
     }
     setFormData({
@@ -39,6 +44,12 @@ function BookmarkForm() {
       desc: '',
     })
     e.preventDefault()
+  }
+
+  if (setMessage) {
+    setTimeout(() => {
+      setMessage(null)
+    }, 3000)
   }
 
   return (
@@ -63,6 +74,7 @@ function BookmarkForm() {
         </div>
 
         <Button type="submit">Submit</Button>
+        {message && <p className="message">{message}</p>}
       </form>
     </Card>
   )
