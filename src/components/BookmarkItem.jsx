@@ -1,19 +1,18 @@
-import React from 'react'
-import Card from '../utilities/Card'
-
 function BookmarkItem({ data }) {
   return (
-    <Card>
-      <div className="bookmark">
-        <div>
-          <h5>{data.name}</h5>
-          <a href={`${data.website}`} target="_blank" rel="noreferrer">
-            vist
-          </a>
+    <>
+      <div className="card bg-base-100 shadow-xl mb-2 w-11/12">
+        <div className="card-body">
+          <h4 className="card-title capitalize">{data.name}</h4>
+          <p className="text-xs">{data.desc}</p>
+          <div className="card-actions justify-end">
+            <a href={data.website} className="btn btn-primary">
+              vist
+            </a>
+          </div>
         </div>
-        <p>{data.desc}</p>
       </div>
-    </Card>
+    </>
   )
 }
 

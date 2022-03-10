@@ -1,21 +1,27 @@
 const BookmarkData = [
   {
     id: 1,
-    name: 'github',
+    name: 'Github',
     website: 'http://www.github.com',
-    desc: 'this is github webpage',
+    desc: 'This is github webpage',
   },
   {
     id: 2,
-    name: 'tailwind',
+    name: 'Tailwind',
     website: 'http://www.tailwind.com',
-    desc: 'this is tailwind webpage',
+    desc: 'This is tailwind webpage',
   },
   {
     id: 3,
-    name: 'react',
+    name: 'React',
     website: 'http://www.reactjs.com',
-    desc: 'this is reactjs webpage',
+    desc: 'This is reactjs webpage',
+  },
+  {
+    id: 4,
+    name: 'DaisyUI',
+    website: 'http://www.daisyui.com',
+    desc: 'This is daisyUI webpage and you can login to see more',
   },
 ]
 

@@ -5,7 +5,7 @@ import BookmarkList from '../components/BookmarkList'
 
 function Home() {
   return (
-    <div className="container">
+    <div className="container mx-auto px-3 pb-12">
       <Header />
       <BookmarkForm />
       <BookmarkList />

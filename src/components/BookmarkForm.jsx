@@ -32,8 +32,8 @@ function BookmarkForm() {
 
     if (data.name === '' && data.website === '' && data.desc === '') {
       setMessage('Please fill the form')
-    } else if (name.length <= 8 && desc.length <= 15) {
-      setMessage(`${name} must be 10 character & ${desc} 20 character`)
+    } else if (name.length <= 8 && desc.length <= 80) {
+      setMessage(`${name} must be 10 character & ${desc} up to 80 character`)
     } else {
       setMessage(null)
       addBookmark(data)
@@ -49,34 +49,81 @@ function BookmarkForm() {
   if (setMessage) {
     setTimeout(() => {
       setMessage(null)
-    }, 3000)
+    }, 5000)
   }
 
   return (
-    <Card>
+    <div className="mb-10 max-w-xl container mx-auto card shadow-xl py-5 px-5">
       <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>Name</label>
-          <input onChange={handleChange} type="text" name="name" value={name} />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">NAME</span>
+          </label>
+          <label className="input-group">
+            <span className="label-text">WEB</span>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="name"
+              className="input input-bordered w-full"
+              value={name}
+            />
+          </label>
         </div>
-        <div className="input-group">
-          <label>Url</label>
-          <input
-            onChange={handleChange}
-            type="url"
-            name="website"
-            value={website}
-          />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">URL</span>
+          </label>
+          <label className="input-group">
+            <span className="label-text">LINK</span>
+            <input
+              onChange={handleChange}
+              type="url"
+              name="website"
+              className="input input-bordered w-full"
+              value={website}
+            />
+          </label>
         </div>
-        <div className="input-group">
-          <label>Desc</label>
-          <input onChange={handleChange} type="text" name="desc" value={desc} />
+        <div className="form-control mb-10">
+          <label className="label">
+            <span className="label-text">DESCRIPTION</span>
+          </label>
+          <label className="input-group">
+            <span className="label-text">DESC</span>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="desc"
+              className="input input-bordered w-full"
+              value={desc}
+            />
+          </label>
         </div>
 
         <Button type="submit">Submit</Button>
-        {message && <p className="message">{message}</p>}
+        {message && (
+          <div className="alert alert-error shadow-lg mt-4">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-current flex-shrink-0 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span>{message}</span>
+            </div>
+          </div>
+        )}
       </form>
-    </Card>
+    </div>
   )
 }
 

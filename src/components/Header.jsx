@@ -4,8 +4,8 @@ function Header() {
   const title = 'Bookmark App'
   return (
     <header>
-      <div className="container">
-        <h2>{title}</h2>
+      <div className="container text-center mb-5 mt-2 text-xl uppercase">
+        <h2 className="font-bold">{title}</h2>
       </div>
     </header>
   )
