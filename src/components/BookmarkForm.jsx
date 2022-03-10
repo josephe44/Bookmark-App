@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react'
-import Card from '../utilities/Card'
 import Button from '../utilities/Button'
 import BookmarkContext from '../context/BookmarkContext'
 
